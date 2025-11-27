@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Warehouses;
+namespace App\Filament\Resources;
 
-use App\Filament\Resources\Warehouses\Pages\CreateWarehouse;
-use App\Filament\Resources\Warehouses\Pages\EditWarehouse;
-use App\Filament\Resources\Warehouses\Pages\ListWarehouses;
-use App\Filament\Resources\Warehouses\Schemas\WarehouseForm;
-use App\Filament\Resources\Warehouses\Tables\WarehousesTable;
+use App\Filament\Resources\WarehouseResource\Pages;
+use App\Filament\Resources\WarehouseResource\Schemas\WarehouseForm;
+use App\Filament\Resources\WarehouseResource\Tables\WarehousesTable;
 use App\Models\Warehouse;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -42,9 +40,9 @@ class WarehouseResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListWarehouses::route('/'),
-            'create' => CreateWarehouse::route('/create'),
-            'edit' => EditWarehouse::route('/{record}/edit'),
+            'index' => Pages\ListWarehouses::route('/'),
+            'create' => Pages\CreateWarehouse::route('/create'),
+            'edit' => Pages\EditWarehouse::route('/{record}/edit'),
         ];
     }
 }
