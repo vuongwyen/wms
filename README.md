@@ -102,13 +102,17 @@ Follow these steps to set up the project locally:
 
 ## 📸 Screenshots
 
-| Dashboard Overview | Order Management |
-|:------------------:|:----------------:|
-| ![Dashboard](docs/dashboard.png) | ![Orders](docs/orders.png) |
+| Dashboard Overview | Low Stock Alert |Customers Management |
+|:------------------:|:----------------:|:----------------:|
+| <img width="1904" height="1079" alt="image" src="https://github.com/user-attachments/assets/518b3388-cd26-4c1e-bfde-15352a17ed70" /> | <img width="1905" height="1079" alt="image" src="https://github.com/user-attachments/assets/1215ef43-85bf-4cd8-84ed-2f9e0c7a2001" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/666faf71-f8b9-4b32-8089-255ba58513b6" /> |
 
-| Inventory List | Low Stock Alert |
+| Products Management | Order Management |
 |:--------------:|:---------------:|
-| ![Inventory](docs/inventory.png) | ![Alerts](docs/alerts.png) |
+| <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b1446863-8424-4fec-9c71-4c069d588bee" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/811df683-0306-463f-9d81-66f5ba097f13" /> |
+
+| Suppliers Management | Warehouses Management |
+|:--------------:|:---------------:|
+| <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9d7e3939-f5f7-4bf6-bccc-e07e5464167a" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/652267d2-b5af-4bc9-9709-5479604a303d" /> |
 
 ## 🗺️ Roadmap
 
