@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return redirect('/admin');
+})->name('admin');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
