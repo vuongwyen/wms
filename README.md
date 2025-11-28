@@ -1,4 +1,4 @@
-# Nexus WMS
+# WMS
 
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
@@ -14,7 +14,7 @@
 
 ## 🚀 What's New in v2.0
 
-Nexus WMS v2.0 Enterprise Edition introduces industrial-grade features designed for high-volume warehouses:
+WMS v2.0 Enterprise Edition introduces industrial-grade features designed for high-volume warehouses:
 
 *   **🏗 Advanced Location Management:**
     *   Full hierarchical storage support: **Warehouse -> Zone -> Rack -> Bin**.
@@ -73,7 +73,7 @@ Built on a robust, modern stack designed for performance and scalability:
 
 ## 💻 Installation & Setup
 
-Follow these steps to deploy Nexus WMS v2.0 locally:
+Follow these steps to deploy WMS v2.0 locally:
 
 ### 1. Clone the Repository
 ```bash
@@ -116,4 +116,4 @@ Login to the Admin Panel at `http://127.0.0.1:8000/admin`:
 
 ---
 
-**Nexus WMS** - *Built for the Modern Supply Chain.*
+**WMS** - *Built for the Modern Supply Chain.*
