@@ -17,6 +17,9 @@ class ProductsTable
                 TextColumn::make('sku')
                     ->label('SKU')
                     ->searchable(),
+                TextColumn::make('barcode')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('base_unit')
@@ -38,6 +41,12 @@ class ProductsTable
             ])
             ->recordActions([
                 EditAction::make(),
+                \Filament\Tables\Actions\Action::make('print_barcode')
+                    ->icon('heroicon-o-printer')
+                    ->label('Print Barcode')
+                    ->modalContent(fn($record) => view('filament.pages.actions.barcode', ['record' => $record]))
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Close'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -1,126 +1,119 @@
-# AidSync WMS
+# Nexus WMS
 
-> A modern, real-time inventory and warehouse management solution designed for precision and scalability.
+![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Filament](https://img.shields.io/badge/Filament-v3-F28D1A?style=for-the-badge&logo=laravel&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/v2.0-stable-green?style=for-the-badge)
 
-![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat-square&logo=php&logoColor=white)
-![Laravel Version](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=flat-square&logo=laravel&logoColor=white)
-![Filament Version](https://img.shields.io/badge/Filament-v3-F2C13E?style=flat-square&logo=livewire&logoColor=black)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)
+![WMS Dashboard](docs/images/dashboard-v2.png)
 
-## 📖 Introduction
+> **"Precision Inventory Control with FEFO Strategy & Real-time Analytics."**
 
-**AidSync WMS** is a robust Warehouse Management System built to address the complexities of modern inventory tracking. It moves beyond simple quantity counters by implementing **Batch/Lot tracking** and **Expiry Date management**, ensuring precise control over stock lifecycles.
+---
 
-Whether you are managing high-value electronics or perishable goods, AidSync WMS provides real-time visibility, automated low-stock alerts, and a seamless flow for inbound and outbound operations.
+## 🚀 What's New in v2.0
 
-## ✨ Key Features
+Nexus WMS v2.0 Enterprise Edition introduces industrial-grade features designed for high-volume warehouses:
 
-- **Product Management** ✅
-  - Comprehensive details: SKU, Name, Description, Base Unit.
-  - Configurable **Minimum Stock Levels** for automated alerts.
+*   **🏗 Advanced Location Management:**
+    *   Full hierarchical storage support: **Warehouse -> Zone -> Rack -> Bin**.
+    *   Precise inventory tracking down to the specific bin level.
+*   **🧠 Smart Picking (FEFO Strategy):**
+    *   **First Expired, First Out:** The system automatically suggests batches with the earliest expiry dates during picking to minimize waste.
+*   **📟 Barcode Integration:**
+    *   Built-in barcode generation for Products and Locations.
+    *   Scan-to-Receive and Scan-to-Pick workflows.
+*   **📊 Real-time Analytics:**
+    *   Live dashboards showing Inventory Turnover Ratio, Stock Movement, and Low Stock Alerts.
 
-- **Inventory Control** ✅
-  - **Batch & Lot Tracking:** Every item is traced back to its origin batch.
-  - **Expiry Management:** First-Expired-First-Out (FEFO) readiness with visual indicators for expiring stock.
-  - **Multi-Warehouse Support:** Scalable architecture for multiple storage locations.
+---
 
-- **Operations** ✅
-  - **Inbound (Purchase Orders):** Streamlined receiving process with batch entry.
-  - **Outbound (Sales Orders):** Efficient stock deduction with batch selection.
-  - **Stock Adjustments:** Handle lost, damaged, or found items with audit trails.
+## ✨ Core Features
 
-- **Dashboard & Analytics** ✅
-  - **Real-time Metrics:** Total Inventory Value, Low Stock Counts, Expiring Batches.
-  - **Interactive Widgets:** Visual charts and tables powered by Filament.
+### 📦 Master Data Management
+*   **SKU Management:** Detailed product profiles with dimensions, weight, and base units.
+*   **Multi-Warehouse:** Manage inventory across multiple physical facilities.
+*   **Partner Management:** Centralized database for Suppliers and Customers.
 
-## 🛠️ Tech Stack
+### 🏭 Inventory Control
+*   **Batch/Lot Tracking:** Traceability for every item using Batch Codes and Expiry Dates.
+*   **Stock Adjustments:** Audit-ready workflows for correcting discrepancies (Found/Lost/Damaged).
+*   **Stock Transfers:** Seamless movement of stock between Bins or Warehouses.
 
-- **Backend:** [Laravel 11](https://laravel.com)
-- **Admin Panel:** [FilamentPHP v3](https://filamentphp.com)
-- **Frontend Interactivity:** [Livewire 3](https://livewire.laravel.com)
-- **Database:** MySQL 8.0
-- **Styling:** [TailwindCSS](https://tailwindcss.com)
+### ⚙️ Operations
+*   **Inbound (Purchase Orders):**
+    *   Draft -> Confirmed -> Receiving -> Putaway.
+    *   Direct assignment to specific storage Bins.
+*   **Outbound (Sales Orders):**
+    *   Draft -> Confirmed -> Picking -> Packing -> Shipped.
+    *   Automated Pick List generation based on FEFO logic.
 
-## 🗄️ Database Structure
+### 🛡 Security
+*   **RBAC:** Role-Based Access Control with pre-configured roles:
+    *   **Admin:** Full system control.
+    *   **Warehouse Manager:** Operational oversight.
+    *   **Staff:** Task execution (Scanning, Picking).
 
-The core logic revolves around strict inventory integrity:
+---
 
-- **Products**: The master catalog item.
-- **Batches**: Specific production lots associated with a product (contains expiry dates).
-- **Inventory Transactions**: The source of truth. Stock is calculated by summing `in` and `out` transactions, ensuring a complete audit trail.
+## 🛠 Tech Stack & Architecture
 
-## 🚀 Installation & Setup
+Built on a robust, modern stack designed for performance and scalability:
 
-Follow these steps to set up the project locally:
+*   **Framework:** [Laravel 11](https://laravel.com)
+*   **Admin Panel:** [FilamentPHP v3](https://filamentphp.com)
+*   **Frontend:** [Livewire](https://livewire.laravel.com) & [TailwindCSS](https://tailwindcss.com)
+*   **Database:** MySQL 8
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/yourusername/aidsync-wms.git
-    cd aidsync-wms
-    ```
+**Core Data Logic:**
+`Products` ↔ `Batches` ↔ `Locations` ↔ `Inventory Transactions` (The Immutable Ledger)
 
-2.  **Install Dependencies**
-    ```bash
-    composer install
-    npm install
-    ```
+---
 
-3.  **Environment Setup**
-    ```bash
-    cp .env.example .env
-    php artisan key:generate
-    ```
-    *Configure your database credentials in the `.env` file.*
+## 💻 Installation & Setup
 
-4.  **Database Migration & Seeding**
-    ```bash
-    php artisan migrate --seed
-    ```
-    *This will populate the database with realistic demo data (Products, Warehouses, Transactions).*
+Follow these steps to deploy Nexus WMS v2.0 locally:
 
-5.  **Build Assets**
-    ```bash
-    npm run build
-    ```
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-org/nexus-wms.git
+cd nexus-wms
+composer install
+npm install && npm run build
+```
 
-6.  **Create Admin User**
-    ```bash
-    php artisan make:filament-user
-    ```
+### 2. Environment Setup
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+*Configure your database credentials in `.env`.*
 
-7.  **Run the Server**
-    ```bash
-    php artisan serve
-    ```
+### 3. Migration & Seeding
+Initialize the database with the v2 schema and sample enterprise data:
+```bash
+php artisan migrate --seed --class=WMSv2Seeder
+```
+> **Note:** The `WMSv2Seeder` automatically generates Warehouses, Zones, Racks, Bins, and sample Inventory Transactions.
 
-    Visit `http://localhost:8000/admin` to access the dashboard.
+### 4. Access the System
+Start the server:
+```bash
+php artisan serve
+```
+Login to the Admin Panel at `http://127.0.0.1:8000/admin`:
+*   **Email:** `admin@nexus-wms.com`
+*   **Password:** `password`
 
-    > **Default Demo Credentials (if seeded):**
-    > - **Email:** `admin@wms.com`
-    > - **Password:** `password`
+---
 
-## 📸 Screenshots
+## 📸 Visuals
 
-| Dashboard Overview | Low Stock Alert |Customers Management |
-|:------------------:|:----------------:|:----------------:|
-| <img width="1904" height="1079" alt="image" src="https://github.com/user-attachments/assets/518b3388-cd26-4c1e-bfde-15352a17ed70" /> | <img width="1905" height="1079" alt="image" src="https://github.com/user-attachments/assets/1215ef43-85bf-4cd8-84ed-2f9e0c7a2001" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/666faf71-f8b9-4b32-8089-255ba58513b6" /> |
+| Mobile Picking Interface | Location Management | Barcode Print Preview |
+| :---: | :---: | :---: |
+| ![Mobile Picking](docs/images/mobile-picking.png) | ![Locations](docs/images/locations.png) | ![Barcodes](docs/images/barcodes.png) |
 
-| Products Management | Order Management |
-|:--------------:|:---------------:|
-| <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b1446863-8424-4fec-9c71-4c069d588bee" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/811df683-0306-463f-9d81-66f5ba097f13" /> |
+---
 
-| Suppliers Management | Warehouses Management |
-|:--------------:|:---------------:|
-| <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9d7e3939-f5f7-4bf6-bccc-e07e5464167a" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/652267d2-b5af-4bc9-9709-5479604a303d" /> |
-
-## 🗺️ Roadmap
-
-- [ ] **API Integration:** REST API for external systems (ERP/eCommerce).
-- [ ] **Barcode Scanner App:** Mobile companion app for scanning SKUs and Batches.
-- [ ] **Advanced Reporting:** Exportable PDF/Excel reports for monthly inventory.
-- [ ] **Supplier Portal:** Allow suppliers to view and update order statuses.
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Nexus WMS** - *Built for the Modern Supply Chain.*

@@ -7,32 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Batch extends Model
+class Location extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'product_id',
-        'batch_code',
-        'barcode',
-        'expiry_date',
+        'warehouse_id',
+        'code',
+        'description',
+        'type',
     ];
 
-    protected $casts = [
-        'expiry_date' => 'date',
-    ];
-
-    public function product(): BelongsTo
+    public function warehouse(): BelongsTo
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Warehouse::class);
     }
 
     public function inventoryTransactions(): HasMany
     {
         return $this->hasMany(InventoryTransaction::class);
-    }
-
-    public function orderItems(): HasMany
-    {
-        return $this->hasMany(OrderItem::class);
     }
 }

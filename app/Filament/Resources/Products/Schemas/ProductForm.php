@@ -15,6 +15,10 @@ class ProductForm
                 TextInput::make('sku')
                     ->label('SKU')
                     ->required(),
+                TextInput::make('barcode')
+                    ->label('Barcode')
+                    ->unique(ignoreRecord: true)
+                    ->maxLength(255),
                 TextInput::make('name')
                     ->required(),
                 Textarea::make('description')
