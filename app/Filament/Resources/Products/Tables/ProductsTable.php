@@ -39,16 +39,16 @@ class ProductsTable
             ->filters([
                 //
             ])
-            ->recordActions([
+            ->actions([
                 EditAction::make(),
-                \Filament\Tables\Actions\Action::make('print_barcode')
+                \Filament\Actions\Action::make('print_barcode')
                     ->icon('heroicon-o-printer')
                     ->label('Print Barcode')
                     ->modalContent(fn($record) => view('filament.pages.actions.barcode', ['record' => $record]))
                     ->modalSubmitAction(false)
                     ->modalCancelActionLabel('Close'),
             ])
-            ->toolbarActions([
+            ->bulkActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
