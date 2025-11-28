@@ -34,18 +34,18 @@ The system replaces guesswork with **real-time tracking**, minimizes waste throu
 
 | **Product Management** | **Order Management** |
 |:--------------:|:---------------:|
-| <img src="https://github.com/user-attachments/assets/b1446863-8424-4fec-9c71-4c069d588bee" width="100%" /> | <img src="https://github.com/user-attachments/assets/811df683-0306-463f-9d81-66f5ba097f13" width="100%" /> |
+| <img width="1900" height="1079" alt="image" src="https://github.com/user-attachments/assets/142f928b-2568-4a99-b890-0d5b7b336db8" /> | <img width="1900" height="1079" alt="image" src="https://github.com/user-attachments/assets/8e7c0634-e821-4e19-bdb0-5897e5214470" /> |
 
 <details>
 <summary>👀 <b>View More Screenshots</b></summary>
 
 | **Customer Management** | **Supplier Management** |
 |:----------------:|:--------------:|
-| <img src="https://github.com/user-attachments/assets/666faf71-f8b9-4b32-8089-255ba58513b6" width="100%" /> | <img src="https://github.com/user-attachments/assets/9d7e3939-f5f7-4bf6-bccc-e07e5464167a" width="100%" /> |
+| <img width="1901" height="1079" alt="image" src="https://github.com/user-attachments/assets/2985595a-624e-4d15-a99c-56f749e8a47e" /> | <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dc807807-0396-499e-965a-85049ded3a2c" /> |
 
-| **Warehouse Management** |
-|:---------------:|
-| <img src="https://github.com/user-attachments/assets/652267d2-b5af-4bc9-9709-5479604a303d" width="100%" /> |
+| **Warehouse Management** | **Warehouse Locations Management** |
+|:---------------:|:---------------:|
+| <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9b745338-a677-40b8-8120-c7e2b6740199" /> | <img width="1899" height="1079" alt="image" src="https://github.com/user-attachments/assets/a8a38a29-ed1d-4241-8f90-31c56e8535bf" /> |
 
 </details>
 
